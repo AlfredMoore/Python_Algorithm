@@ -17,12 +17,14 @@ def bsearch(a,n):       #form sorted a find the lower and upper bound
     
         # lower bound
     while l<r:
-        mid = l+r+1 >> 1
-        if mid >= n:   r = mid-1
-        else:          L = mid
-    lowerbound = mid 
-
-    while l<r:
         mid = l+r >> 1
-        if mid 
+        if mid >= n:   r = mid
+        else:          l = mid+1
+    lowerbound = mid 
+        # upper buond
+    while l<r:
+        mid = l+r+1 >> 1
+        if mid <= n:    l = mid
+        else:           r = mid-1
 
+print("hello, world!")
