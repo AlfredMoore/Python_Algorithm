@@ -1,5 +1,3 @@
-from re import L
-
 
 def bsearch(a,n):       #form sorted a find the lower and upper bound
     # [l,mid] [mid+1,r] mid = (l+r) >> 1
@@ -18,6 +16,7 @@ def bsearch(a,n):       #form sorted a find the lower and upper bound
         # lower bound
     while l<r:
         mid = l+r >> 1
+# <<<<<<< HEAD
         if mid >= n:   r = mid
         else:          l = mid+1
     lowerbound = mid 
@@ -26,5 +25,19 @@ def bsearch(a,n):       #form sorted a find the lower and upper bound
         mid = l+r+1 >> 1
         if mid <= n:    l = mid
         else:           r = mid-1
+# =======
+        if a[mid] >= n: r = mid
+        else:           l = mid+1
+    if a[mid] == n: lowerbound = mid
+    else:           return -1,-1
+
+    while l<r:
+        mid = l+r+1 >> 1
+        if a[mid] <= n: l = mid
+        else:           r = mid-1
+    upperbound = mid
+    
+    return lowerbound,upperbound
+# >>>>>>> 295011cc89e1d47dcede02125e34a59faab0b480
 
 print("hello, world!")
